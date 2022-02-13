@@ -6,7 +6,7 @@ const authorName = document.querySelector('#author');
 const bookPrice = document.querySelector('#price');
 const bookDom = document.getElementById('bookLists');
 const addBtn = document.getElementById('bookSubmit');
-
+let i = 0;
 
 
 //Field required function
@@ -108,6 +108,8 @@ form.addEventListener('submit', function(e){
 
     e.preventDefault();
 
+    
+
     //Validate form 
     let isBookNameValid = checkBookName(),
     isAuthorNameValid = checkAuthorName(),
@@ -116,11 +118,15 @@ form.addEventListener('submit', function(e){
     let isFormValid = isBookNameValid && isAuthorNameValid && isPriceValid;
     
     if(isFormValid){
+        i++;
+
+
         let book = bookName.value;
         let author = authorName.value;
         let price = bookPrice.value;
 
         let newBookNameTr = document.createElement('tr');
+        newBookNameTr.setAttribute("id", "bookTr"+i);
 
         let newBookNameTd = document.createElement('td');
         let newBookNameDiv = document.createElement('div');
@@ -152,8 +158,8 @@ form.addEventListener('submit', function(e){
         let newActionBtnDiv = document.createElement('div');
         let actionBtn = document.createElement('button');
         newActionBtnDiv.setAttribute('class', 'p-2');
-        actionBtn.setAttribute("class", "text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-2 py-1 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900");
-        actionBtn.setAttribute("id", "removeBtn");
+        actionBtn.setAttribute("class", "text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-2 py-1 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 removeBtn");
+        actionBtn.setAttribute("id", "removeBtn"+i);
         actionBtn.innerHTML = 'Delete';
         newBookNameTr.appendChild(newActionBtnTd);
         newActionBtnTd.appendChild(newActionBtnDiv);
@@ -166,8 +172,9 @@ form.addEventListener('submit', function(e){
         authorName.value = '';
         bookPrice.value = '';
 
-
-        const removeBtn = document.getElementById('removeBtn');
+        actionBtn.addEventListener('click', function(){
+            newBookNameTr.remove();
+        });
     }
 });
 
@@ -185,7 +192,3 @@ form.addEventListener('click', function(e){
             break;
     }
 });
-console.log(removeBtn);
-// removeBtn.addEventListener('click', function(e){
-//     console.log('Removed');
-// });
