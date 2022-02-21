@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+      .wrapper {
+        width: 600px;
+        height: 300px;
+        position: absolute; /*Can also be `fixed`*/
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-image 1s ease-in-out;
+      }
+    svg.bi.bi-caret-left {
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+    svg.bi.bi-caret-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper" id="imgWrapper" style="background-image: url('./img/1.jpg');">
+      <div class="quote-content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-caret-left btn btn-left"
+          id="slideLeft"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-caret-right btn btn-right"
+          id="slideRight"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+          />
+        </svg>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
