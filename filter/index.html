@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Filter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section id="filter">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="#">
+                        <img src="./img/logo.svg" alt="" srcset="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mr-2">
+                          <button class="btn btn-outline-success btnAll" data-filter="all">All</button>
+                        </li>
+                        <li class="nav-item mr-2">
+                          <button class="btn btn-outline-success btnCake" data-filter="cake">Cake</button>
+                        </li>
+                        <li class="nav-item mr-2">
+                          <button class="btn btn-outline-success cupBtn" data-filter="cupcake">CupCake</button>
+                        </li>
+                        <li class="nav-item mr-2">
+                          <button class="btn btn-outline-success donutBtn" data-filter="doughnut">Doughnut</button>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <button class="btn btn-outline-success sweetBtn" data-filter="sweets">Sweets</button>
+                          </li>
+                      </ul>
+                      </ul>
+                    </div>
+                </nav>
+                <div class="d-flex flex-row flex-wrap justify-content-center" id="wrapper">
+
+                    <div class="d-flex flex-column store-item cake" id="cake">
+                      <img src="./img/cake-1.jpeg" class="img-fluid">
+                    </div>
+                    <div class="d-flex flex-column store-item cake" id="cake">
+                      <img src="./img/cake-2.jpeg" class="img-fluid ">
+                    </div>
+                    <div class="d-flex flex-column store-item cake" id="cake">
+                      <img src="./img/cake-3.jpeg" class="img-fluid">
+                    </div>
+
+                    <div class="d-flex flex-column store-item cupcake" id="cupcake">
+                        <img src="./img/cupcake-1.jpeg" class="img-fluid">
+                    </div>
+                    <div class="d-flex flex-column store-item cupcake" id="cupcake">
+                      <img src="./img/cupcake-2.jpeg" class="img-fluid">
+                    </div>
+                    <div class="d-flex flex-column store-item cupcake" id="cupcake">
+                        <img src="./img/cupcake-3.jpeg" class="img-fluid">
+                    </div>
+                
+
+                    <div class="d-flex flex-column store-item doughnut" id="doughnut">
+                      <img src="./img/doughnut-1.jpeg" class="img-fluid ">
+                    </div>
+                    <div class="d-flex flex-column store-item doughnut" id="doughnut">
+                        <img src="./img/doughnut-2.jpeg" class="img-fluid ">
+                    </div>
+                    <div class="d-flex flex-column store-item doughnut" id="doughnut">
+                        <img src="./img/doughnut-3.jpeg" class="img-fluid ">
+                    </div>
+
+                    <div class="d-flex flex-column store-item sweets" id="sweets">
+                        <img src="./img/sweets-1.jpeg" class="img-fluid ">
+                    </div>
+                    <div class="d-flex flex-column store-item sweets" id="sweets">
+                        <img src="./img/sweets-2.jpeg" class="img-fluid ">
+                    </div>
+                    <div class="d-flex flex-column store-item sweets" id="sweets">
+                        <img src="./img/sweets-3.jpeg" class="img-fluid ">
+                    </div>
+                  </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
