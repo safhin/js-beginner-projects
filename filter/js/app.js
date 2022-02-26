@@ -69,8 +69,11 @@
 
 
 //Optimised solution
-const filterBtns = document.querySelectorAll('.btn');
+const filterBtns = document.querySelectorAll('.filter-btn');
 const allImgs = document.querySelectorAll('.store-item');
+const modalMeta = document.querySelector('.modal-meta');
+const modal = document.querySelector('.modal-img');
+const modalCloseBtn = document.querySelector('#close');
 
 
 filterBtns.forEach(function(filterBtn){
@@ -89,3 +92,57 @@ filterBtns.forEach(function(filterBtn){
         });
     });
 });
+
+allImgs.forEach(function(item){
+    item.addEventListener('click', function(){
+        const imgSrc = item.childNodes[1].src;
+        const imgEl = document.createElement('img'); 
+
+        //Slide right next image btn
+        const rightBtn = document.querySelector('.right-btn');
+        const leftBtn = document.querySelector('.left-btn');
+    
+        if(modalMeta.firstChild != null){
+            modalMeta.removeChild(modalMeta.firstChild);
+            imgEl.setAttribute("src", imgSrc);
+            modalMeta.appendChild(imgEl);
+            modal.style.setProperty('visibility', 'visible');
+        }else{
+            modalMeta.appendChild(imgEl);
+            imgEl.setAttribute("src", imgSrc);
+            modal.style.setProperty('visibility', 'visible');
+        }
+
+        
+        rightBtn.addEventListener('click', function(e){
+            if(item !== null){
+                var nextImg = item.nextElementSibling;
+                item = nextImg;
+                if(nextImg !== null){
+                    const nextImgSrc = nextImg.childNodes[1].src;
+                    imgEl.setAttribute("src", nextImgSrc);
+                    modalMeta.appendChild(imgEl);
+                }
+            }
+        });
+
+        leftBtn.addEventListener('click', function(e){
+            if(item !== null){
+                var nextImg = item.previousElementSibling;
+                item = nextImg;
+                if(nextImg !== null){
+                    const nextImgSrc = nextImg.childNodes[1].src;
+                    imgEl.setAttribute("src", nextImgSrc);
+                    modalMeta.appendChild(imgEl);
+                }
+            }
+        });
+    });
+});
+
+
+modalCloseBtn.addEventListener('click', function(){
+    modal.style.setProperty('visibility', 'hidden');
+});
+
+

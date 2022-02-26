@@ -23,19 +23,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item mr-2">
-                          <button class="btn btn-outline-success btnAll" data-filter="all">All</button>
+                          <button class="btn btn-outline-success filter-btn btnAll" data-filter="all">All</button>
                         </li>
                         <li class="nav-item mr-2">
-                          <button class="btn btn-outline-success btnCake" data-filter="cake">Cake</button>
+                          <button class="btn btn-outline-success filter-btn btnCake" data-filter="cake">Cake</button>
                         </li>
                         <li class="nav-item mr-2">
-                          <button class="btn btn-outline-success cupBtn" data-filter="cupcake">CupCake</button>
+                          <button class="btn btn-outline-success filter-btn cupBtn" data-filter="cupcake">CupCake</button>
                         </li>
                         <li class="nav-item mr-2">
-                          <button class="btn btn-outline-success donutBtn" data-filter="doughnut">Doughnut</button>
+                          <button class="btn btn-outline-success filter-btn donutBtn" data-filter="doughnut">Doughnut</button>
                         </li>
                         <li class="nav-item mr-2">
-                            <button class="btn btn-outline-success sweetBtn" data-filter="sweets">Sweets</button>
+                            <button class="btn btn-outline-success filter-btn sweetBtn" data-filter="sweets">Sweets</button>
                           </li>
                       </ul>
                       </ul>
@@ -85,6 +85,33 @@
                     </div>
                   </div>
             </section>
+        </div>
+
+        <div class="modal-img">
+          <div class="modal-holder">
+            <div class="modal-heading text-right">
+              <button type="button" class="btn btn-warning" id="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="lrft-slide">
+              <button class="btn btn-success left-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-meta"></div>
+            <div class="right-slide">
+              <button class="btn btn-success right-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                  </svg>
+              </button>
+            </div>
+          </div>
         </div>
     </div>
 

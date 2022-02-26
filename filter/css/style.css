@@ -17,3 +17,33 @@ img {
     transform: scaleY(1.05);
     padding-top: 5px; 
 }
+
+.modal-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6) !important;
+    visibility:hidden;
+}
+.modal-holder{
+    position: relative;
+}
+
+.right-btn {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+}
+
+.left-btn {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+}
