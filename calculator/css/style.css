@@ -1,0 +1,128 @@
+/* body {
+	width: 100%;
+	height: 100vh;
+} */
+
+main {
+	margin: 1rem auto;
+	width: 30rem;
+	height: 40rem;
+	background-color: #504e53;
+	border: 1px solid black;
+	border-radius: 1.5rem;
+	box-shadow: inset 1px 1px 2px #ccc, inset -1px -1px 2px #ccc,
+		0px 8px 10px #0006;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	width: 90%;
+	margin: 0.8rem 1rem 0;
+}
+header .circle {
+	margin-right: 0.8rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: none;
+	border-radius: 50%;
+	line-height: 1;
+	cursor: pointer;
+}
+.circle::before {
+	content: "";
+	margin-left: -1px;
+	font-size: 1.5rem;
+}
+.circle.red {
+	color: hsl(3, 100%, 25%);
+	background-color: #ff6057;
+}
+.circle.yellow {
+	color: hsl(41, 99%, 25%);
+	background-color: #febc2e;
+}
+.circle.green {
+	color: hsl(129, 67%, 25%);
+	background-color: #28c841;
+}
+.circle.red:hover::before {
+	content: "×";
+}
+.circle.yellow:hover::before {
+	content: "−";
+}
+.circle.green::before {
+	font-size: 1.3rem;
+	line-height: 1.25;
+}
+.circle.green:hover::before {
+	content: "⤢";
+	margin-left: -2px;
+}
+
+.calculus {
+	margin-top: 2rem;
+	width: 100%;
+	height: 5rem;
+	display: flex;
+}
+.calculus p {
+	margin: 0;
+	padding-right: 4px;
+	color: white;
+	font-size: 3rem;
+	font-weight: 300;
+	text-align: right;
+	line-height: 0.7;
+}
+
+.buttons {
+	margin-top: 2rem;
+	width: 100%;
+	height: 28.5rem;
+}
+
+.buttons .row {
+	margin-bottom: 2px;
+	padding-left: 2px;
+	width: 100%;
+	height: 5.6rem;
+}
+.buttons .row:last-of-type {
+	margin-bottom: 0;
+}
+
+.buttons .row .square {
+	margin-right: -2px;
+	padding: 0;
+	width: 7.35rem;
+	height: 100%;
+	border: none;
+	color: white;
+	background-color: #7c7b7f;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.buttons .row .square:hover {
+	filter: brightness(110%);
+}
+
+.row .square.dark {
+	background-color: #626065;
+}
+.row .square.yellow {
+	background-color: #ff9f0b;
+}
+.row .square.span {
+	width: 14.85rem;
+}
+.row .square.bleft {
+	border-bottom-left-radius: 1.3rem;
+}
+.row .square.bright {
+	margin-left: 0px;
+	border-bottom-right-radius: 1.4rem;
+}
