@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>Tip Calculator</title>
+    <style>
+      .user-icon {
+        width: 15px;
+      }
+    </style>
+  </head>
+  <body class="bg-info">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="">Tip Calculator</h3>
+            </div>
+            <div class="card-body">
+              <div>
+                <label for="inlineFormInputGroup">How Much Is Your Bill?</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">$</div>
+                  </div>
+                  <input type="number" class="form-control" id="bill" placeholder="Bill" />
+                </div>
+              </div>
+              <div>
+                <label for="inlineFormInputGroup"
+                  >How Many People Sharing The Bill ?</label
+                >
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <img
+                        class="img-fluid user-icon"
+                        src="./user.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <input type="number" class="form-control" id="person" placeholder="Person" />
+                </div>
+                <label for="inlineFormInputGroup">How Was Your Service?</label>
+                <select class="custom-select custom-select-md mb-3 percent">
+                  <option selected>Choose...</option>
+                  <option value="20">Greate 20%</option>
+                  <option value="10">Good 10%</option>
+                  <option value="2">Bad 2%</option>
+                </select>
+              </div>
+              <div class="">
+                <button type="submit" class="btn btn-primary mb-2 btn-block" id="btn-submit">
+                  Calculate
+                </button>
+              </div>
+
+              <!-- Tip result -->
+              <div class="card border-success mb-3 result mt-4">
+                <div class="card-header">Your Total</div>
+                <div class="card-body text-success">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Tip Amount : <span class="tip"></span></li>
+                    <li class="list-group-item">Total Amount : <span class="total"></span></li>
+                    <li class="list-group-item">Person Wise Bill : <span class="each-bill"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
