@@ -1,0 +1,13 @@
+#this is a movie related API based project using tmdb movie API
+
+1. Recent released movile slider
+2. In theater movie tab/filter
+3. On tv movie tab/filter
+4. Login
+5. Registration
+6. Scrolling
+7. Sticky header
+8.
+9.
+10.
+11.
