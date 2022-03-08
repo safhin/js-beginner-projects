@@ -1,4 +1,16 @@
 //Slider data
+const nowPlaying = async () => {
+    return fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=3cf4b1a65fd2b71e9b6d118dde60d79e")
+    .then((response) => {
+        return response.json().then((data) => {
+            return data;
+        });
+    })
+    .catch(err => console.log('Request Failed', err)); // Catch errors
+}
+
+
+
 const sliders = [
     {
         "cats" : ["sci fi", "action" , "adventure"],
@@ -38,26 +50,31 @@ let count = 0;
 slideBtns.forEach(function(button){
     if(button.classList.contains('btn-left')){
         button.addEventListener('click', function(){
-            sliders[count].cats.forEach(function(value){
-                //select and remove all categories
-                const prevCats = document.querySelectorAll('.cat');
-                prevCats.forEach(function(node){
-                    node.remove();
-                });
-
-                const catElem = document.createElement('span');
-                catElem.setAttribute('class', 'cat');
-                catElem.innerHTML = value;
-                catsElem.appendChild(catElem);
+            nowPlaying((data) => {
+                console.log(nowPlaying());
+                console.log(data);
+                // sliders[count].cats.forEach(function(value){
+                //     //select and remove all categories
+                //     const prevCats = document.querySelectorAll('.cat');
+                //     prevCats.forEach(function(node){
+                //         node.remove();
+                //     });
+    
+                //     const catElem = document.createElement('span');
+                //     catElem.setAttribute('class', 'cat');
+                //     catElem.innerHTML = value;
+                //     catsElem.appendChild(catElem);
+                // });
+                slideImgElem.src = data.results['poster_path'];
+                titleElem.innerHTML = sliders[count].title;
+                ratingElem.innerHTML = sliders[count].rating;
+                descElem.innerHTML = sliders[count].desc;
+                count--;
+                if(count < 0){
+                    count = sliders.length - 1;
+                }
             });
-            slideImgElem.src = sliders[count].img;
-            titleElem.innerHTML = sliders[count].title;
-            ratingElem.innerHTML = sliders[count].rating;
-            descElem.innerHTML = sliders[count].desc;
-            count--;
-            if(count < 0){
-                count = sliders.length - 1;
-            }
+
         })
     }
     if(button.classList.contains('btn-right')){
@@ -86,3 +103,5 @@ slideBtns.forEach(function(button){
         })
     }
 });
+
+
