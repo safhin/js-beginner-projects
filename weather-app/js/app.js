@@ -48,7 +48,7 @@ searchBtn.addEventListener('click', function(){
 });
 
 const userAction = async () => {
-    return fetch("https://api.openweathermap.org/data/2.5/weather?q=" + searchElem.value + "&appid=d5d236b19472c5ac4a28e1cbd9417350")
+    return fetch("https://api.openweathermap.org/data/2.5/weather?q=" + searchElem.value + "&appid=your-app-id")
     .then((response) => {
         return response.json().then((data) => {
             return data;
