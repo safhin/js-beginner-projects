@@ -1,39 +1,16 @@
 //Slider data
-const nowPlaying = async () => {
+let nowPlaying = async () => {
     return fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=3cf4b1a65fd2b71e9b6d118dde60d79e")
     .then((response) => {
-        return response.json().then((data) => {
+        return response.json()
+        .then((data) => {
+
             return data;
         });
     })
     .catch(err => console.log('Request Failed', err)); // Catch errors
 }
 
-
-
-const sliders = [
-    {
-        "cats" : ["sci fi", "action" , "adventure"],
-        "title" : "guardians of the year",
-        "img" : "images/uploads/john-wick.jpg",
-        "rating" : "7",
-        "desc": "Run Time: 3h Rated: PG-13 Release: October 24, 2014"
-    },
-    {
-        "cats" : ["cats 1", "cats 2" , "thriller"],
-        "title" : "John Wick 1",
-        "img" : "images/uploads/poster1.jpg",
-        "rating" : "7.4",
-        "desc": "Run Time: 2h21 Rated: PG-13 Release: 1 May 2015"
-    },
-    {
-        "cats" : ["cats 2", "cats 2" , "cats 2"],
-        "title" : "Intersteller",
-        "img" : "images/uploads/intersteller.jpg",
-        "rating" : "8",
-        "desc": "Run Time: 2h Rated: PG-13 Release: 1 Dec 2016"
-    },
-];
 
 //Slider dom select
 const slideLeftElem = document.querySelector('#slideLeft');
@@ -50,9 +27,7 @@ let count = 0;
 slideBtns.forEach(function(button){
     if(button.classList.contains('btn-left')){
         button.addEventListener('click', function(){
-            nowPlaying((data) => {
-                console.log(nowPlaying());
-                console.log(data);
+            nowPlaying().then((data) => {
                 // sliders[count].cats.forEach(function(value){
                 //     //select and remove all categories
                 //     const prevCats = document.querySelectorAll('.cat');
@@ -65,41 +40,45 @@ slideBtns.forEach(function(button){
                 //     catElem.innerHTML = value;
                 //     catsElem.appendChild(catElem);
                 // });
-                slideImgElem.src = data.results['poster_path'];
-                titleElem.innerHTML = sliders[count].title;
-                ratingElem.innerHTML = sliders[count].rating;
-                descElem.innerHTML = sliders[count].desc;
+     
+                slideImgElem.src = 'https://image.tmdb.org/t/p/w500/' + data.results[count]['poster_path'];
+                titleElem.innerHTML = data.results[count]['title'];
+                ratingElem.innerHTML = data.results[count]['vote_average'];
+                descElem.innerHTML = data.results[count]['overview'];
                 count--;
                 if(count < 0){
-                    count = sliders.length - 1;
+                    count = data.results.length - 1;
                 }
             });
-
         })
     }
     if(button.classList.contains('btn-right')){
         button.addEventListener('click', function(){
-            sliders[count].cats.forEach(function(value){
-                //select and remove all categories
-                const prevCats = document.querySelectorAll('.cat');
-                prevCats.forEach(function(node){
-                    node.remove();
-                });
+            nowPlaying().then((data) => {
 
-                const catElem = document.createElement('span');
-                catElem.setAttribute('class', 'cat');
-                catElem.innerHTML = value;
-                catsElem.appendChild(catElem);
+                // sliders[count].cats.forEach(function(value){
+                //     //select and remove all categories
+                //     const prevCats = document.querySelectorAll('.cat');
+                //     prevCats.forEach(function(node){
+                //         node.remove();
+                //     });
+    
+                //     const catElem = document.createElement('span');
+                //     catElem.setAttribute('class', 'cat');
+                //     catElem.innerHTML = value;
+                //     catsElem.appendChild(catElem);
+                // });
+    
+                slideImgElem.src = 'https://image.tmdb.org/t/p/w500/' + data.results[count]['poster_path'];
+                titleElem.innerHTML = data.results[count]['title'];
+                ratingElem.innerHTML = data.results[count]['vote_average'];
+                descElem.innerHTML = data.results[count]['overview'];
+                count++;
+                if(count >= data.results.length){
+                    count = 0;
+                }
             });
 
-            slideImgElem.src = sliders[count].img;
-            titleElem.innerHTML = sliders[count].title;
-            ratingElem.innerHTML = sliders[count].rating;
-            descElem.innerHTML = sliders[count].desc;
-            count++;
-            if(count >= sliders.length){
-                count = 0;
-            }
         })
     }
 });
