@@ -13,7 +13,7 @@ const comingSoon = async () => {
             let template = ``;
             let movieDetails = data.results;
             let imgRul = "https://image.tmdb.org/t/p/w500";
-            movieDetails.slice(0,6).map((movie) => {
+            movieDetails.slice(0,8).map((movie) => {
                 template += 
                 `
                     <div class="slide-it">
@@ -52,7 +52,7 @@ const topRated = async () => {
             let template = ``;
             let movieDetails = data.results;
             let imgRul = "https://image.tmdb.org/t/p/w500";
-            movieDetails.slice(0,6).map((movie) => {
+            movieDetails.slice(0,8).map((movie) => {
                 template += 
                 `
                     <div class="slide-it">
@@ -91,7 +91,7 @@ const popular = async () => {
             let template = ``;
             let movieDetails = data.results;
             let imgRul = "https://image.tmdb.org/t/p/w500";
-            movieDetails.slice(0,6).map((movie) => {
+            movieDetails.slice(0,8).map((movie) => {
                 template += 
                 `
                     <div class="slide-it">

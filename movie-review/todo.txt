@@ -7,7 +7,7 @@
 5. Registration
 6. Scrolling
 7. Sticky header
-8.
-9.
+8. Load data smoothly
+9. Filtering data
 10.
 11.
