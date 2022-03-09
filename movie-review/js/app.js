@@ -1,10 +1,9 @@
 //Slider data
-let nowPlaying = async () => {
+let latestMovie = async () => {
     return fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=3cf4b1a65fd2b71e9b6d118dde60d79e")
     .then((response) => {
         return response.json()
         .then((data) => {
-
             return data;
         });
     })
@@ -24,10 +23,12 @@ const slideBtns = document.querySelectorAll('.slideBtn');
 
 let count = 0;
 
+
+
 slideBtns.forEach(function(button){
     if(button.classList.contains('btn-left')){
         button.addEventListener('click', function(){
-            nowPlaying().then((data) => {
+            latestMovie().then((data) => {
                 // sliders[count].cats.forEach(function(value){
                 //     //select and remove all categories
                 //     const prevCats = document.querySelectorAll('.cat');
@@ -54,7 +55,7 @@ slideBtns.forEach(function(button){
     }
     if(button.classList.contains('btn-right')){
         button.addEventListener('click', function(){
-            nowPlaying().then((data) => {
+            latestMovie().then((data) => {
 
                 // sliders[count].cats.forEach(function(value){
                 //     //select and remove all categories

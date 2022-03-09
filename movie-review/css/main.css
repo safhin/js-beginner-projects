@@ -35,3 +35,14 @@ img.slideImage {
     font-size: 12px;
     text-transform: uppercase;
 }
+
+.btn{
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

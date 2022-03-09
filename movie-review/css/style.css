@@ -4484,7 +4484,7 @@ ul {
 .movie-items .slick-multiItem,
 .movie-items .slick-multiItem2 {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 .movie-items .slick-multiItem .slick-list,
 .movie-items .slick-multiItem2 .slick-list {
@@ -4771,6 +4771,7 @@ ul {
   color: #dcf836;
 }
 .tabs ul.tab-links li.active a,
+.tabs ul.tab-links button.active,
 .tabs ul.tab-links-2 li.active a,
 .tabs ul.tab-links-3 li.active a {
   color: #dcf836;
