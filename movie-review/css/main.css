@@ -46,3 +46,10 @@ img.slideImage {
     font-weight: bold;
     margin-bottom: 20px;
 }
+.custom-width img{
+    width: 30%;
+}
+
+.visible{
+    visibility: hidden;
+}
